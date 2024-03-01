@@ -1,0 +1,75 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #explain span,xmp{
+         background-color: gray;
+      }
+    </style>
+    
+   <script src="./js/JS Events 2.js"></script>
+ </head>
+ <body>
+
+   <a href="https://www.w3schools.com/js/js_htmldom_events.asp"  style="text-decoration: none;" target="_blank"><h2>js event</h2></a>
+   <a href="https://www.w3schools.com/js/js_htmldom_eventlistener.asp" style="text-decoration: none;" target="_blank"><h2>DOM EventListener</h2></a>
+   
+   <h1 id="title">Lecture 53</h1> 
+   <p>Say hello to   
+   <input id="name" type="text">
+   <button id="b1">Say it</button>
+   </p>
+
+   <div id="content"></div>
+
+   <p>Say hello to   
+   <input id="name1" type="text">
+   <button id="b2">Say it</button>
+   </p>
+   
+      <div id="content1"></div>
+
+   <div id="explain">
+      <xmp>
+         <button id="btn" onclick="sayHello()">Say Hello</button>
+         <script>
+            function sayHello() {
+              console.log(this); // this 指向 window 對象
+              console.log(this.id); // this.id 為 undefined
+            }
+          </script>
+      </xmp>
+      <p>在這個例子中，我們在 <span>&lt;button&gt;</span> 元素上使用了 <span>onclick</span> 屬性，並指定了 sayHello 這個函數作為事件處理器。
+         當我們點擊這個按鈕的時候，<span>sayHello</span>  函數會被執行，但是在這個函數裡面，this 並不是指向 <span>&lt;button&gt;</span> 
+         元素，而是指向 <span>window</span> 對象，這是因為 <span>sayHello</span> 函數是在全域範圍裡定義的，所以它的 this 也是全域的。這樣就會造成一些混亂，
+         因為我們可能想要在事件處理器裡面使用 <span>&lt;button&gt;</span> 元素的一些屬性或方法，比如說它的 <span>id</span> 或 <span>style</span>，但是這些都會變成 undefined，
+         因為 <span>window </span>對象並沒有這些屬性或方法。</p>
+      <p>
+         如果我們想要讓事件處理器的 this 指向 &lt;button&gt; 元素，我們就可以使用非侵入式事件綁定的方法，也就是使用 addEventListener 方法，像這樣：
+      </p>
+
+      <xmp>
+         <button id="btn">Say Hello</button>
+         <script>
+            let btn = document.querySelector("#btn"); // 選取按鈕元素
+            btn.addEventListener("click", sayHello); // 綁定事件處理器
+          
+            function sayHello() {
+              console.log(this); // this 指向按鈕元素
+              console.log(this.id); // this.id 為 "btn"
+            }
+          </script>
+      </xmp>
+      <p>
+         在這個例子中，我們先用 <span>document.querySelector</span> 方法選取了按鈕元素，
+         然後用 <span>addEventListener </span>方法將 <span>sayHello</span>  函數綁定到按鈕元素的 <span>click</span> 事件上。
+         這樣做的好處是，當我們點擊按鈕的時候，<span>sayHello</span>  函數裡面的 <span>this</span> 就會指向按鈕元素，
+         而不是 window 對象，這樣我們就可以正常地使用按鈕元素的屬性或方法，比如說它的 <span>id</span> 或 <span>style</span>。這樣就可以避免一些混亂和錯誤。
+      </p>
+         
+   </div>
+ </body>
+ </html>

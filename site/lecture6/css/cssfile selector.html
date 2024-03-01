@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!--css結構如下
+p {
+    color: blue;
+}
+p代表selector(選擇器) 這裡代表所有的<p>都會受到這個css影響
+而selector後必定接{}
+color: blue;代表declaration(css聲明)
+declaration由property(屬性 這裡為color)和value(值 這裡為blue)組成
+property後必接: value以;結尾 而;可省略
+
+
+#element selector
+如果前面是element 那就代表所有的element都會改變
+例
+p {
+    color: blue;
+}
+代表所有<p>...</p>都會變成color: blue
+
+
+
+#class selector
+如果要指定class name 則要變成.class_name
+例
+.class_name{
+    color: blue;
+}
+代表
+<p class="class_name">...</p>
+<div class="class_name">...<div>
+會變成color: blue;
+
+而<p>...</p>
+不會
+
+#id selector
+如果要指定id value 則要變成#id_value
+例
+#id_value{
+    color: blue;
+}
+代表
+<div id="id_value">...<div>
+會變成color: blue;
+
+而<p>...</p>
+不會
+
+#grouping selector
+可以同時定義多個組別用相同的格式 中間須加上", "
+例
+div, .class_name, #id_value{
+    color: blue;
+}
+代表
+<p class="class_name">...<p/>
+<div>...</div>
+<p><span id="id_value">...</span></p>
+都變成color: blue;
+
+而<p>...</p>
+沒有
+
+
+注意 id在html只能使用一次 所以若要搭配css 最好多用class
+-->
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thefreshloaf web test</title>
+    <style>
+        /* all h1 elements*/
+        h1 {
+            color: red;
+            text-align: center; /*水平對齊方式*/
+        }
+
+        /* all with class ="highlight"  */
+        .highlight {
+            font-size: 20px; /*字體大小*/
+            font-weight: bold; /*字體粗細*/
+            font-style: italic; /*字體*/
+            background-color: yellow; /*背景顏色*/
+            opacity: 0.6; /*文字不透明度*/
+        }
+        
+        /* elements with id=newchapter*/
+        #newchapter {
+            font-size: 24px;
+            font-weight: bold;
+            background-color: aquamarine;
+            opacity: 0.5;
+        }
+
+        /*class ="author" and "blessing"*/
+        .author, .blessing{
+            font-size: 12px;
+            font-weight: bold;
+            background-color: orange;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+
+<body>
+    <a href="https://www.thefreshloaf.com/node/73441/back-basics-hand-development-ap-flour-boule-under-fermented" target="_blank">resorce</a>
+    <h1 id="top">link to section of the same page</h1>
+    <section>
+        <ul>
+            <li><a href="#section1">section1</a></li>
+            <li><a href="#section2">section2</a></li>
+            <li><a href="#section3">section3</a></li>
+            <li><a href="#section4">section4</a></li>
+            <li><a href="#section5">section5</a></li>
+        </ul>
+    </section>
+    
+
+    <!--使用"id" =重新命名該段code 可以搭配<a>之類的達到頁內url-->
+    <section id="section1">
+        <h1>Back to basics. Hand development, AP flour boule. Under fermented ?</h1>
+
+        <p class="highlight">Just a AP flour straight sourdough boule. Development by hand, slow deliberate room temperature fermented. Back to basics to regain the feeling of dough under hand.</p>
+    </section>
+
+    <section id="section2">
+        <h4><a href="#section2">I am so confused!!! Plus an observation.</a></h4>
+        <p>Okay my friends, here is the skinny. I sliced my hand developed boule across the opposite axis. To my surprise the crumb looks to me pretty okay! </p>
+        <p>My question...</p>
+        <ol class="highlight">
+            <li>Fools crumb</li>
+            <li>Well fermented</li>
+            <li>Needs improvement ( please elaborate)</li>
+        </ol>
+        <p>Observation</p>
+        <p>I think rye bread is the perfect canvas for practical hands on practice of decorative scoring.</p>
+        <p>Thanks for any advice.</p>
+        <p class="blessing">Kind regards,</p>
+        <p class="author">Will F.</p>
+        
+    </section>
+
+    <section id="section3">
+        <h4><a href="#section3">Big cavities suggest air</a></h4>
+        <p>Big cavities suggest air pockets, that is, not enough degassing. Tight crumb suggests not enough proofing.  And different texture on two axes suggests something about the shaping technique being different in different directions.</p>
+    </section>
+
+    <section id="section4">
+        <h4><a href="#section4">Other than that,</a></h4>
+        <p>everything's hunky-dory.  ;-&#40;</p>
+        <p class="author">Paul</p>
+    </section>
+
+
+
+
+    <section id="section5">
+        <h4><a href="#section5">Tell me about it!</a></h4>
+        
+        <p>A lot to digest. As they say. Smile... Today's handmade boule exercise. . First , "bulk fermentation" ✅</p>
+        <div>test text for this <span id="newchapter">new chapter</span></div>
+    </section>
+
+
+
+
+
+
+
+
+    <div>
+        <h2><a name="#section5">(#section5) section5</a></h2>
+        <p>
+            back to top: <a href="#top">back to top</a>
+        </p>
+    </div>
+</body>
+
+<hr>
+<footer>
+    All original site content copyright 2024 The Fresh Loaf unless stated otherwise. Content posted by community members is their own. The Fresh Loaf is not responsible for community member content. If you see anything inappropriate on the site or have any questions, contact me at floydm at thefreshloaf dot com. This site is powered by Drupal.
+</footer>
+</html>

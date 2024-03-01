@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Pseudo-classes</title>
+<!--
+    :link 代表還沒被訪問過的url
+    :visited 代表已經被訪問過的url
+    :hover 代表游標移動到上面時會改變狀態
+    :active 代表點擊到放開瞬間之間會發生改變
+    :focus 點擊停留在上面會發生改變 通常搭配<input>
+    :nth-child 第nth個element做改變
+-->
+<style>
+
+
+
+
+    ul#anchor{
+        background-color: darkturquoise;
+        width: 200px;
+    }
+    ul#anchor li{
+        background-color: darkturquoise;
+        border-bottom: 1px solid black;
+        color: rgb(83, 0, 0);
+    }
+
+
+    /*代表無論網址有無被訪問過都保持設定好的格式*/
+    div a.tb-pre:link, div a.tb-pre:visited{ 
+        background-color: #04AA6D; /*背景顏色*/
+        text-decoration: none; /*消除文字格式*/
+        color: white;  /*字體顏色*/
+        border: 1px solid black; /*框線顏色*/
+        display: inline-block; /*顯示模式*/
+        margin-left: 50%;  /*左邊寬度*/
+        text-align: center; /*文字置中*/
+        width:100px;  /*寬度*/
+        margin-bottom: 1px; /*底度寬度*/
+    }    
+
+    div a.tb-pre:hover, div a.tb_pre:active{
+        background-color: red;
+        color: black;
+    }
+
+    /*:link 代表還沒被訪問過的url*/
+    div.ls2 a:link{
+        text-decoration: none;
+        color: rgb(0, 9, 128);
+        background-color: gray;
+    }
+
+    /*:visited 代表已經被訪問過的url*/
+    div.ls2 a:visited{
+        text-decoration: none;
+        color: orange;
+        background-color: black;
+    }
+
+    /*:hover 代表游標移動到上面時會改變狀態*/
+    #hover1 h2:hover{
+        font-size: 50px;
+        color: pink;
+        background-color: yellow;
+        border: 2px solid red;
+    }
+
+    /*:active 代表點擊到放開瞬間之間會發生改變*/
+    section#hover1 li:active{
+        color: red;
+        background-color: rgb(184, 29, 155);
+        border: 2px solid rgb(47, 192, 74);
+    }
+
+
+
+    /*:focus 點擊停留在上面會發生改變 通常搭配<input>*/
+    input#clickl:focus{
+        outline: none;
+        border:10px solid aqua;
+    }
+
+    /*:nth-child 第nth個element做改變*/
+    ul#anchor li:nth-child(4){
+        font-size: 30px;
+    }
+    
+    ul#anchor li:nth-child(3n){
+        width: 50px;
+        border: 1px solid black;
+    }
+
+</style>
+
+</head>
+<body>
+    <section>
+        <h1>CSS Pseudo-classes</h1>
+        <div class="topbottom">
+            <a class="tb-pre" href="https://www.w3schools.com/css/css_combinators.asp" target="_blank">❮ Previous</a>
+            <a class="tb-pre" href="https://www.w3schools.com/css/css_pseudo_elements.asp" target="_blank">Next ❯</a>
+        </div>
+    </section>
+
+    <section>
+        <div class="ls2">
+            <a href="https://www.youtube.com/">youtube</a>
+            <a href="https://forum.gamer.com.tw/B.php?bsn=60076">場外</a>
+            <a href="https://www.ptt.cc/bbs/IdolMaster/M.1704800955.A.8C7.html">asoifjof</a>
+        </div>
+    </section>
+
+
+    <section id="hover1">
+    <h2>What are Pseudo-classes? <span style="color: darkviolet;">put here</span></h2>
+    <p>A pseudo-class is used to define a special state of an element.</p>
+    <p>For example, it can be used to:</p>
+    <p style="color: red; border: 2px solid black; width: 100px;">click under list</p>
+    <ul>
+        <li>Style an element when a user mouses over it</li>
+        <li>Style visited and unvisited links differently</li>
+        <li>Style an element when it gets focus</li>
+    </ul>
+    </section>
+
+    <input placeholder="click" id="clickl">
+    <input type="text" placeholder="check" id="clickr">
+
+    <section>
+        <h2>Syntax</h2>
+        <span>The syntax of pseudo-classes:</span>
+        <div>
+        <code>
+            selector:pseudo-class {<br>
+            &nbsp;&nbsp;property: value;<br>
+              }
+        </code>
+        </div>
+    </section>
+    <section>
+        <h1>Anchor Pseudo-classes</h1>
+        <span>there have 5 ways for anchor pseudo-classes</span>
+        <ul id="anchor">
+            <li>:link</li>
+            <li>:visited</li>
+            <li>:hover</li>
+            <li>:active</li>
+            <li>:nth-child(...)</li>
+            <li>aaaa</li>
+            <li>bbbb</li>
+            <li>cccc</li>
+            <li>dddddddd</li>
+        </ul>
+    </section>
+
+
+
+
+</body>
+</html>

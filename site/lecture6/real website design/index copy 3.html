@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Chu's China Bistro</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--where the font come from https://fonts.google.com/specimen/Oxygen?query=oxygen-->
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap" rel="stylesheet">
+    <!--bootstrap icon link: https://icons.getbootstrap.com/-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  </head>
+<body>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <header>
+      <nav id="header-nav" class="navbar navbar-expand-md">
+          <div class="container-fluid">
+              <!--'container-fluid' stretches to the full width of the browser window (minus some margins) 
+                and automatically adjusts its width as you change the width of the browser.-->
+              
+              <!--icon,restaurant name,kosher certified-->
+              <div class="navbar-header">
+                <!--brand icon-->
+                <a href="index.html" class="float-start  d-md-block d-none">
+                  <!--float-start=float: left
+                    for md and larger screen, use d-md-block d-none
+                    https://stackoverflow.com/questions/35351353/missing-visible-and-hidden-in-bootstrap-->
+                  <div id="logo-img"></div>
+                </a>
+                <!--restaurant name,kosher certified-->
+                <div class="navbar-brand">
+                  <a href="index.html"><h1 class="nav-ob">David Chu's China Bistro</h1></a>
+                  <p class="nav-ob">
+                    <img src="image/star-k-logo.png" alt="Kosher certification" >
+                    <span>Kosher Certified</span>
+                  </p>
+                </div> <!--navbar-brand-->
+              </div>  <!--navbar-header-->
+
+              <!--navbar toggler button-->
+              <!--data-bs-target mean where we should target when press button-->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <!--add toggler list use ul-->
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="nav-list">
+                  <!--<i class="bi bi-menu-up"> mean icon,class="d-none d-md-block" mean 'it only work' when screen<=sm  -->
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">
+                      <i class="bi bi-menu-up"></i><span><br class="d-none d-md-block">Menu</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">
+                      <i class="bi bi-info-circle"></i><span><br class="d-none d-md-block">About</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">
+                      <i class="bi bi-asterisk"></i><span><br class="d-none d-md-block">Awards</span>
+                    </a>
+                  </li>
+                  <!--we don't want phone show at toggler but when use phone, show at middle-->
+                  <li class="d-none d-md-block" id="phone">
+                    <a class="nav-link active" aria-current="page" href="tel:410-602-5008">
+                      <span>410-602-5008</span>
+                    </a>
+                    <div>* We Deliver</div>
+                  </li>
+                </ul> <!--navbar-nav-->
+              
+              </div> <!---navbar-collapse-->
+          </div> <!--container-fluid-->
+                           
+      </nav>
+    </header>
+
+    <div id="call-btn" class="d-md-none">
+      <a class="btn" href="tel:410-602-5008">
+      <span class="glyphicon glyphicon-earphone">410-602-5008</span>
+      </a>
+    </div>
+    <div id="xs-deliver" class="text-center d-md-none">* We Deliver</div>
+
+
+
+    <!--jumbotron img-->
+    <div id="main-content" class="container-fluid">
+      <div class="jumbotron    jumbotron-fluid">
+      </div>
+    </div>
+
+    <!--menu-->
+    <div id="home-titles" class="row">
+      <div class="col-md-4 col-sm-6 col-xs-12 mx-auto">
+        <a href="menu-categories.html"><div id="menu-title">
+          <span>menu</span></div></a>
+      </div>
+      
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <a href="single-category.html"><div id="specials-title">
+          <span>specials</span></div></a>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <a href="https://maps.app.goo.gl/TifYje6Ev1XfFmZN6" target="_blank">
+          <div id="map-title">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12338.70098200007!2d-76.7116881!3d39.3635903!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c81a14e7817803%3A0xab20a0e99daa17ea!2sDavid%20Chu&#39;s%20China%20Bistro!5e0!3m2!1szh-TW!2stw!4v1705639277060!5m2!1szh-TW!2stw" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <span>map</span>
+          </div>
+        </a>
+      </div>
+    </div>
+      
+      
+
+
+</body>
+</html>

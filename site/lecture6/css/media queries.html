@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media quary</title>
+    <style>
+        .wrapper{
+            overflow: auto;
+        }
+        .box1{
+            width: auto;
+            float: none;
+            
+            /*background-color: red;*/
+        }
+        .main{
+            /*background-color: lightcyan;*/
+            margin-left: 4px;  /*set left margin of .main*/
+            color: black;
+        }
+        .box1>div{
+            background-color: lightblue;  /*set background color*/
+            margin: 5px;  /*set each div margin*/
+            padding: 5px; /*set padding size*/
+            text-align: center;  /*set text alignment in middle*/
+            border: 1px solid black; /*set border*/
+            border-radius: 20px; /*set border radius*/
+        }
+        @media screen and (min-width:1200px){
+            .box1{
+                float: left;
+                width: 200px;
+            }
+            .main{
+                /*set margin between .box1 & .main
+                notice: the gap between two box = margin-left - width
+                                                =216-200=16px*/
+                margin-left: 216px; 
+            }
+        }
+        @media screen and (min-width:992px) and (max-width:1199px){
+            .box1{
+                width: 200px;
+                
+                float: left;
+            }
+            .main{
+                /*set margin between .box1 & .main
+                notice: the gap between two box = margin-left - width
+                                                =216-200=16px*/
+                margin-left: 216px; 
+                font-size: 30px;
+            }
+        }
+        @media screen and (min-width:300px) and (max-width:991px){
+            .box1{
+                width: 200px;
+                
+                float: left;
+            }
+            .main{
+                /*set margin between .box1 & .main
+                notice: the gap between two box = margin-left - width
+                                                =216-200=16px*/
+                margin-left: 216px; 
+                font-size: 40px;
+            }
+        }
+        @media screen and (min-width:300px) and (max-width:991px) and   (orientation:landscape){
+            .box1{
+                width: 500px;
+                
+                float: left;
+            }
+            .main{
+                /*set margin between .box1 & .main
+                notice: the gap between two box = margin-left - width
+                                                =216-200=16px*/
+                margin-left: 216px; 
+                font-size: 100px;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="wrapper">
+
+    
+    <div class="box1">
+        <div>menu1</div>
+        <div>menu2</div>
+        <div>menu3</div>
+        <div>menu4</div>
+        <div>menu5</div>
+    </div>
+    <div class="main">
+        <h1>Resize the browser window to see the effect!</h1>
+        <p>This example shows a menu that will float to 
+            the left of the page if the viewport is 480 pixels 
+            wide or wider. If the viewport is less than 480 pixels,
+             the menu will be on top of the content.</p>
+    </div>
+    </div>
+    <div>
+        <a href="https://www.w3schools.com/css/css3_mediaqueries.asp" target="_blank">resorce</a>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text style</title>
+    <style>
+        .style{
+            font-family: Arial, Helvetica, sans-serif; /*字體*/
+            color: #00ddff;/*顏色*/
+            font-style: italic;/*是否斜體*/
+            font-weight: 900;/*粗細*/
+            font-size: 24px;/*大小*/
+        }
+        strong {
+            background-color: yellowgreen;
+        }
+        #em-text div{
+            font-size: 120%;
+        }
+    </style>
+</head>
+<body>
+    <p>here you can choose which text font you want 
+        <a href="https://www.w3schools.com/cssref/css_websafe_fonts.php" target="_blank">https://www.w3schools.com/cssref/css_websafe_fonts.php</a> </p>
+    <p class="style">and here show you how it applied</p>
+
+
+    <section>
+        <h3>What is the difference between PX, EM and Percent?</h3>
+        <div>
+            Pixel is a static measurement, while percent and EM are relative measurements. Percent depends on its 
+            parent font size. <strong>EM is relative to the current font size 
+            of the element</strong> (2em means 2 times the size of the current font). 
+            So, If the font size of body is 16 pixels, then 150% will be 24 pixels (1.5 * 16), 
+            and 2em will be 32 pixels (16 * 2). Look at <a href="https://www.w3schools.com/cssref/css_units.php">CSS Units</a> for more measurement units.
+        </div>
+        <br>
+        <div>
+            <a href="https://www.w3schools.com/cssref/css_pxtoemconversion.php" target="_blank" style="font-size: 2em;">PX to EM Conversion</a>
+        </div>
+        
+    </section>
+
+    <section id="em-text">
+        <h3>And here how em work</h3>
+        <div>regular text
+            <div style="font-size: 2em;">2em text
+                <div style="font-size: 2em;">4em text
+                    <div style="font-size: 0.5em;">back 2em text
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

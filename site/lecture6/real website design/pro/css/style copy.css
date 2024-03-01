@@ -1,0 +1,101 @@
+body{
+    background-color: #61122f;
+    color: white;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.14em;
+}
+/*Header*/
+.navbar{
+    background-color: #f6b319;
+    border-radius: 0;
+    border: 0;
+}
+
+#logo-img{
+    background: url('../image/restaurant-logo.png') no-repeat;
+    
+    width: 150px;
+    height: 150px;
+    margin: 10px 15px 10px 30px;
+
+}
+.navbar-header{
+    width: 100%;
+}
+.navbar-brand{
+    padding-top: 25px;
+}
+
+.navbar-brand h1{
+    font-family: 'Lora', serif;
+    color: #557c3e;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px #222;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: .75;
+}
+
+
+
+.navbar-brand a:hover, .navbar-brand a:focus,.navbar-brand a:link, .navbar-brand a:visited{
+    text-decoration: none;
+}
+
+.navbar-brand p{
+    color: #000;
+    text-transform: uppercase;
+    font-size: .7em;
+    margin-top: 15px;
+}
+
+#nav-list{
+    margin-top: 10px;
+}
+
+#nav-list a{
+    color: #951C49;
+    text-align: center;
+}
+
+#nav-list a:hover{
+    background: #E7E7E7;
+}
+#nav-list a span{
+    font-size: 1.8em;
+}
+
+#phone{
+    margin-top: 5px;
+}
+
+#phone a{
+    text-align: right;
+    padding-bottom: 0;
+}
+
+#phone div{
+    color: #557c3e;
+    text-align: right;
+    padding-right: 10px;
+}
+
+/*change navbar-toggler border color*/
+.container-fluid button.navbar-toggler{
+    border: 1px solid rgba(97, 18, 47, 1);
+}
+
+/*change the hamburger in navbar-toggler*/
+/*resource: https://codingyaar.com/shorts/bootstrap-navbar-toggler-color-change/*/
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(97, 18, 47, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+.container-fluid button.navbar-toggler{
+    clear: both;
+    
+    margin-top: -30px;
+  }
+
+

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box model</title>
+    <style>
+        /*  用*代表將規則應用到"所有"elements上  */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: grey;
+            margin: 0;
+            padding: 0;
+        }
+        #ul-content{
+            background-color: lightgreen;
+            width: 600px;
+        }
+        #box {
+            background-color: green;
+            padding: 10px/*top*/ 10px/*right*/ 10px/*bottom*/ 10px/*left*/;
+            border: 20px solid black;
+            margin: 40px;
+            width: 300px;
+            box-sizing: border-box; /*content+padding+border+margin=width*/
+        }
+        #content {
+            background-color: blue;
+        }
+        #box1 {
+            background-color: red;
+            padding: 10px/*top*/ 10px/*right*/ 10px/*bottom*/ 10px/*left*/;
+            border: 20px solid black;
+            margin: 40px;
+            width: 300px;
+        }
+        #content1 {
+            background-color: yellow;
+        }
+
+        .container {
+            display: flex;  
+            justify-content: space-between;
+        }
+
+        /*若要呈現margin border padding 則以下程式是必須的*/
+        .box {
+            background-color: red;
+            padding: 10px;
+            border: 20px solid black;
+            margin: 40px;
+            width: 300px;
+        }
+        .content {
+            background-color: yellow;
+        }
+
+
+        
+    </style>
+
+</head>
+<body>
+    <div><a href="https://www.w3schools.com/css/css_boxmodel.asp" target="_blank" style="font-size: 3em; background-color: yellow;">resource</a>
+    <br>
+    <br>
+    </div>
+
+    <div id="box">
+        <div id="content" style="color: white;">
+            some text
+        </div>
+    </div>
+
+    <div id="box1">
+        <div id="content1" style="color: black;">
+            some text
+        </div>
+    </div>
+    
+
+    <div><p>display: flex的應用 可適應頁面放大縮小 <a href="https://www.w3schools.com/css/css3_flexbox_container.asp" target="_blank">應用</a> </p></div>
+    <div class="container">
+        <div class="box">
+            <div class="content">
+                some text left
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                some text right
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <p>overflow處理溢出來的文字</p>
+    </div>
+    <div id="box1" style="height: 200px; overflow: scroll;">
+        <div id="content" style="color: white;">
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        </div>
+    </div>
+
+
+    <section id="ul-content">
+        <ul>
+            <li>
+                <strong>Content</strong> - The content of the box, where text and images appear
+            </li>
+            <li>
+                <strong>Padding</strong> - Clears an area around the content. The padding is transparent
+            </li>
+            <li>
+                <strong>Border</strong> - A border that goes around the padding and content
+            </li>
+            <li>
+            <strong>Margin</strong> - Clears an area outside the border. The margin is transparent
+            </li>
+        </ul>
+    </section>
+
+</body>
+</html>

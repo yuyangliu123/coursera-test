@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+section{
+    padding: 10px;
+    float: left;
+}
+.food{
+    background-color: blueviolet;
+    float: right;
+    border:  1px solid black;
+}
+.content{
+    background-color: aquamarine;
+    border:  1px solid black;
+    padding-top: 20px;
+}
+
+
+/*for large device*/
+@media(min-width : 992px){
+    col-lg-4 {
+        display: inline-block;
+    }
+    .col-lg-4{
+        width:33%
+    }
+}
+
+/*for median device*/ 
+@media(min-width : 768px) and (max-width:991px){
+    col-md-6 {
+        display: inline-block;
+    }
+    col-md-12 {
+        display: inline-block;
+    }
+    .col-md-6{
+        width:50%
+    }
+    .col-md-12{
+        width:100%
+    }
+    .content{
+        font-size: 1.2em;
+    }
+    .food{
+        font-size: 1.44em;
+    }
+}
+/*for small device*/ 
+@media (max-width:767px){
+    col-sm-12 {
+        display: inline-block;
+    }
+    .col-sm-12{
+        width:100%
+    }
+    .content{
+        font-size: 1.4em;
+    }
+    .food{
+        font-size: 1.68em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

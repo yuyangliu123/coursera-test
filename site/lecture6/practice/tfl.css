@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+a:link,a:visited {
+    text-decoration: none;
+}
+a:hover,a:active{
+    text-decoration: underline;
+}
+
+.title{
+    color: antiquewhite;
+    background-color: saddlebrown;
+}
+#wb-name{
+    text-decoration: none;
+    
+    color: antiquewhite;
+}
+.menu-a div{
+    float: left;
+    display: inline-block;
+}
+.menu-b{
+    width: 67%;
+    background-color: red;
+}
+.menu-c{    
+    list-style-type: none;
+    margin:  -17px   0 0; /*消除header和menu之間的空白*/
+    padding: 0; /*不設置無法對其最左邊*/
+    overflow: hidden;
+}
+.menu-c li{
+    float: left;
+    display: inline-block;
+    
+}
+.menu-c a{
+    color: antiquewhite;
+    background-color: #333333;
+    padding: 16px;
+    text-align: center;
+}
+.menu-c a:hover{
+    background-color: #111111;
+}
+.search-block{
+    background-color: yellow;
+    margin:  -17px   0 0;
+    width: 33%;
+    text-align: right;
+    padding: 1em;
+}
+
+
+

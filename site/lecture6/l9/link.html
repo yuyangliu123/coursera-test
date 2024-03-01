@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>link</title>
+</head>
+<body>
+    <h1>url usage</h1>
+    <section>
+        we can link to a file in the same dir as this html file like this:
+        <a href="link path.html" title="link path">go to link path.html</a>
+        <a href="link path.html" title="link path">
+            <div>
+                go to link path.html
+            </div>
+        </a>
+        <br><br>
+        注意 第一行的link為inline element 固不會從新的一行開始
+        <br>
+        而第二行為block-level element 所以會自動換行
+        <br>
+        且&lt;a&gt; 為flow content 所以可把br包含在裡面 造成一整行後面的空白處都可以點
+    </section>
+</body>
+</html>

@@ -1,0 +1,45 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+ </head>
+ <body>
+   <h1 id="title">Lecture 53</h1> 
+   <p>Say hello to   
+   <input id="name" type="text">
+   <button onclick="sayHello()">Say it</button>
+   </p>
+
+   <div id="content"></div>
+
+   <p>change title to
+   <input id="name-title" type="text">
+   <button onclick="changeTitle()">ok</button>
+   </p>
+
+   <p>change title to
+      <input id="name-title1" type="text">
+      <button onclick="changeTitle1()">ok</button>
+      </p>
+   
+   <p>Say hello to   
+      <input id="name1" type="text">
+      <button onclick="sayHello1()">Say it</button>
+      </p>
+   
+      <div id="content1"></div>
+
+   <br>
+   <br>
+   <br>
+   <p>在console(主控台)輸入window.document會顯示整個element(元素)</p>
+   <p>而要尋找特定元素 如要找id="title" 在console輸入document.getElementById("title")</p>
+   <p>若要使用js來尋找 須將script放在整個html的最後 當html被加載完後才能尋找</p>
+
+      <button on></button>
+   <script src="./js/DOM Manipulation.js"></script>
+ </body>
+ </html>

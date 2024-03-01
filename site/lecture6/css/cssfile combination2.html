@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>combination2</title>
+    <!--
+    #child selector
+    在element後加" > " 再加一個element1
+    代表every p that is a "direct" child of article
+    在element"下一階層"的element1才受影響 後2 3...層不受影響
+    在element"裡面的第一層"element1 
+
+    #Descendant Selector
+    在element後加" "再加element
+    代表在element裡"所有的"element1都會受影響 即使是第2 3...階層
+
+    #Adjacent Sibling Selector
+    代表select an element that is directly after another specific element.
+    在element"後面的第一個"element1
+
+    #General Sibling Selector
+    在element"後面所有的"element1
+    -->
+    
+
+
+    <style>
+        a {
+            font-size: 50px;
+        }
+
+        /*Descendant Selector*/
+        div#descendant p{
+            background-color: yellow;
+        }
+        /*Child Selector*/
+        article > p {
+            background-color: lightblue;
+        }
+        /*Adjacent Sibling Selector*/
+        section + p{
+            background-color: red
+        }
+        /*General Sibling Selector*/
+        div.sibling ~ p{
+            background-color:green
+        }
+
+        /*combination可以多層串起來**/
+        div.aaa > div > p{
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://www.w3schools.com/css/css_combinators.asp" target="_blank">resource</a>
+<!---------------------------------------------------------------------------------------------------->
+        <h2>Descendant Selector</h2>
+
+        <p>The descendant selector matches all elements that are descendants of a specified element.</p>
+
+        <div id="descendant">
+            <p>Paragraph 1 in the div.</p>
+            <p>Paragraph 2 in the div.</p>
+            <section><p>Paragraph 3 in the div.</p></section>
+        </div>
+
+        <p>Paragraph 4. Not in a div.</p>
+        <p>Paragraph 5. Not in a div.</p>
+   
+
+
+
+<!---------------------------------------------------------------------------------------------------->    
+    <h2>Child Selector</h2>
+
+    <p>The child selector (>) selects all elements that are the children of a specified element.</p>
+
+    <article>
+        <p>Paragraph 1 in the div.</p>
+        <p>Paragraph 2 in the div.</p>
+        <code>
+    <!-- not Child but Descendant -->
+        <p>Paragraph 3 in the div (inside a section element).</p>
+        </code>
+        <p>Paragraph 4 in the div.</p>
+    </article>
+
+<p>Paragraph 5. Not in a div.</p>
+<p>Paragraph 6. Not in a div.</p>
+
+
+
+
+<!---------------------------------------------------------------------------------------------------->    
+
+<h2>Adjacent Sibling Selector</h2>
+
+<p>The + selector is used to select an element that is directly after another specific element.</p>
+<p>The following example selects the first p element that are placed immediately after div elements:</p>
+
+<section>
+  <p>Paragraph 1 in the div.</p>
+  <p>Paragraph 2 in the div.</p>
+</section>
+
+<p>Paragraph 3. After a div.</p>
+<p>Paragraph 4. After a div.</p>
+
+<section>
+  <p>Paragraph 5 in the div.</p>
+  <p>Paragraph 6 in the div.</p>
+</section>
+
+<p>Paragraph 7. After a div.</p>
+<p>Paragraph 8. After a div.</p>
+
+
+
+<!---------------------------------------------------------------------------------------------------->    
+
+
+<h2>General Sibling Selector</h2>
+
+<p>The general sibling selector (~) selects all elements that are next siblings of a specified element.</p>
+
+<p>Paragraph 1.</p>
+
+<div class="sibling">
+  <p>Paragraph 2.</p>
+</div>
+
+<p>Paragraph 3.</p>
+<code>Some code.</code>
+<p>Paragraph 4.</p>
+
+
+<h2>multiple-layer combination</h2>
+<div class="aaa">
+    <div>
+        <p>bbbbbb</p>
+        <div>
+            <p>Paragraph 2.</p>
+        </div>
+    </div>
+    
+  </div>
+</body>
+</html>

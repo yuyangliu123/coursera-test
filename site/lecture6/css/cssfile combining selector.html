@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<!--css結構如下
+------------------------------------------------------
+#element with class selector
+在element後面沒有加空格 直接加class selector
+代表 every p that hase class="class_name"
+p.class_name{
+    font-size: 20px;
+}
+
+例
+<p class="class_name">...</p>
+text size=20px
+而
+<div class="class_name">...</div>
+則不受影響
+
+------------------------------------------------------
+#child selector
+在element後加" > " 再加一個element1
+代表every p that is a "direct" child of article
+在element"下一階層"的element1才受影響 後2 3...層不受影響
+在element"裡面的第一層"element1
+例
+article > p{
+    color: blue;
+}
+
+代表
+<article>
+    <p>...</p>
+</article>
+會受影響
+
+而
+<p>...</p>
+和
+<article>
+    <div><p>...</p></div>
+</article>
+不受影響
+-----------------------------------------------------
+#descendant selector
+在element後加" "再加element
+代表在element裡"所有的"element1都會受影響 即使是第2 3...階層
+例
+<article> p{
+    color: blue;    
+}
+
+代表
+<article>
+    <p>...</p>
+</article>
+和
+<article>
+    <div><p>...</p></div>
+</article>
+會受影響
+
+而
+<p>...</p>
+不會
+
+--------------------------------
+#child selector和descendant selector不受限於element
+例
+
+#descendant selector
+
+.colored p{
+    color: blue;
+}
+代表
+every p that is inside (at any level) an element
+with class="colored"
+在element"裡面的所有"element1 不論是不是第一階層
+
+例
+<div class="colored">
+    <p>...</p>
+</div>
+和
+<article class="colored">
+    <div><p>...</p></div>
+</article>
+---------------
+#child selector
+
+article > .colored{
+    color: blue;
+}
+代表
+every element with class="colored" that is a direct child
+of article element
+在element"裡面第一階層的"element1
+
+<article>
+    <div class="colored">...</div>
+</article>
+----------------------------------------------------
+#adjacent sibling selector
+
+div + p{
+    color: blue;
+}
+代表
+select an element that is directly after another 
+specific element.
+在element"後面的第一個"element1
+
+例
+<section>
+    <img>
+    <p>...</p>
+</section>
+在<img>後緊接的<p>才會變成color :blue
+
+而
+<section>
+    <img>
+    <h2> ...</h2>
+    <p>...</p>
+</section>
+的<p>不會變成color: blue;
+
+
+----------------------------------------------------
+General Sibling Selector 
+在element"後面所有的"element1
+div ~ p{
+    color: blue;
+}
+
+
+
+----------------------------------------------------
+#combining selectors
+*element with class selector (selector.calss)
+*child(direct)selector (selector > selector)
+*decendent selector(selector selector)
+*adjacent sibling selector (selector + selector)
+
+
+
+
+
+-->
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thefreshloaf web test</title>
+    <style>
+        /* all with class="highlight"*/
+        .highlight {
+            background-color: green;
+        }
+
+        /* all p elements with class="highlight"  */
+        p.highlight {
+            font-style: italic; /*字體*/
+        }
+        
+        /* all element with class "highlight" as well
+        as with class "mainpoint" */
+        .highlight.mainpoint {
+            color: red;
+            background-color: black;
+        }
+
+        /* any article element which is a direct child of a 
+        section element, i.e., any article element whose
+        immediate parent is a section element.*/
+        section > article{
+            color: green;
+            font-size: 24px;
+        }
+
+        /* any h2 element which is a direct child of a 
+        section element, i.e., any article h2 whose
+        immediate parent is a section element.*/
+        section > h2{
+            color: blue;
+        }
+
+
+        /*all li element that are inside a
+        section element
+        在section"裡面的所有"li*/
+        section li{
+            color: pink;
+        }
+
+        /*p that is directly after h3. 在h3"後面第一個"p*/
+        article + p{
+            color: aquamarine;
+        }
+
+        /*p that is directly after h4. 在h4"後面的所有"p*/
+        h4 ~ p{
+            color: hotpink;
+        }
+
+
+        /* any p element which is a direct child of a 
+        div element, i.e., any article p whose
+        immediate parent is a div element.
+        在div"裡面第一階層的"p*/
+        div > p {
+            color: green;
+        }
+
+        code ~ p {
+            background-color: yellow;
+        }
+
+        a {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+   
+<a href="https://www.w3schools.com/css/css_combinators.asp" target="_blank" title="resorce">resource</a>
+
+    <h1 class="highlight">aaaaaaaaaaaaaaaaaaa</h1>
+    <p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+    <p class="highlight">dddddddddddddddddddddddddddddddddddddd</p>
+    <div class="mainpoint highlight">eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</div>
+
+
+
+    <section>
+        <h2>zzzzzzzzzzz</h2>
+        <div>
+            <article>sdflkhgv,lktbvjert</article>
+        </div>
+    </section>
+
+    <section>
+        <article>cfrokgj</article>
+    </section>
+
+    <section>
+        table of contents:
+        <ul>
+            <li>article1</li>
+            <li>article2</li>
+            <li>article3</li>
+            <li>article4</li>
+        </ul>
+    </section>
+
+    <article>
+        table of contents:
+        <ul>
+            <li>article1</li>
+            <li>article2</li>
+            <li>article3</li>
+            <li>article4</li>
+        </ul>
+    </article>
+
+    <section>
+        <article>
+        <p>gdddgdggddggddgdg</p>
+        <h3>testtesttest</h3>
+        </article>
+        <p>pppppppppppppppp</p>
+        <p>rrrrrrrrrrrrrrrrrr</p>
+    </section>
+
+    <section>
+        <p>gdddgdggddggddgdg</p>
+        <h4>testtesttest</h4>
+        <p>pppppppppppppppp</p>
+        <h6>vgsxfghfr</h6>
+        <p>rrrrrrrrrrrrrrrrrr</p>
+        <p>xxxxxxxxxxxxxxxxxxxxx</p>
+    </section>
+
+</body>
+
+<div>
+    <p>Child paragraph of div</p>
+    <span>Child span of div
+        <p>Grandchild paragraph of div</p>
+        <span>
+            <p>Great Grandchild paragraph of div</p>
+        </span>
+    </span>
+    <p>Another child paragraph of div</p>
+</div>
+<p>Paragraph outside div</p>
+
+
+
+
+
+<h2>General Sibling Selector</h2>
+
+<p>The general sibling selector (~) selects all elements that are next siblings of a specified element.</p>
+<code>Some code.</code>
+<p>Paragraph 1.</p>
+
+<div>
+  <p>Paragraph 2.</p>
+</div>
+
+<p>Paragraph 3.</p>
+
+<p>Paragraph 4.</p>
+
+
+
+</html>

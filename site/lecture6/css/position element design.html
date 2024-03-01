@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position element use</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        div{
+            /*background-color: aqua;*/
+        }
+        p{
+            background-color: green;
+            width: 40%;
+            border: 2px solid black;
+            float: left; /*設置float width:50% 理論上可以左右並排 但設置border下沒辦法
+                            所以必須box-sizing: border-box*/
+            padding: 10px;
+            margin: 5%;
+        }
+
+        #p1{
+            /*background-color: chartreuse;*/
+        }
+        #p2{
+            /*background-color: tomato;*/
+        }
+        section{
+            clear: left;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>two column design</h1>
+    <div>
+    <p id="p1">some text 
+        In this lecture we're going to talk about positioning elements by floating them.
+         Now knowing how to properly float elements is an essential skill to have, 
+         and this is partially because most of the UIs today, web UIs today that are 
+         made, are made by floating the elements. In fact, by the end of this lecture,
+    </p>
+    <p id="p2">we're going to create a two column flexible design where the columns will be
+        flexible as we expand and contract the browser. So let's jump into the code 
+        editor and see how this works. Okay, so we are in sublime text and we're 
+        looking at the file named floating before that HTML. So let's go over the 
+        structure of this HTML document real quick. We have our regular h1 here just 
+        to announce what that is, and then we have a div with four paragraph tags and 
+        a section tag with some text in it, and the paragraph tags ID p1, p2, p3, p4. 
+        If you look at our div section, we styled the div tag, its background to be a 
+        certain color.</p>
+        <section>testtesttest</section>
+    </div>
+</body>
+</html>

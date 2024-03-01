@@ -1,0 +1,15 @@
+a:link, a:visited{
+    text-decoration: none;
+    color: darkred;
+    background-color: pink;
+    border: 2px solid black;
+    font-size: 20px;
+}
+
+a:hover{
+    color: white;
+    background-color: blue;
+    border: 2px solid black;
+    font-size: 24px;
+}
+

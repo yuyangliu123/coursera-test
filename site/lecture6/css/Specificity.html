@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css specificity</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        section.topspan span{
+            color: orange;
+            background-color: dodgerblue;
+        }
+        #hierarchy_ls span{
+            text-decoration-style: solid;
+            color: black;
+            background-color: white;
+        }
+        #note{
+            background-color: lightyellow;
+        }
+
+
+        .ws-table-all {border:1px solid #38444d}
+        .ws-table-all tr{border-bottom:1px solid #38444d}
+        .ws-table-all {border-collapse:collapse;border-spacing:0;width:100%;display:table;border:1px solid #ccc}
+        .ws-table-all tr {border-bottom:1px solid #ddd}
+        .ws-table-all tr:nth-child(odd) {background-color:#fff}.ws-table-all tr:nth-child(even){background-color:#E7E9EB}
+        .ws-table-all td,.ws-table-all th {padding:8px 8px;display:table-cell;text-align:left;vertical-align:top}
+        .ws-table-all th:first-child, .ws-table-all td:first-child{padding-left:16px}
+
+    </style>
+
+</head>
+<body>
+    <a href="https://www.w3schools.com/css/css_specificity.asp">resorce</a>
+    <section class="topspan">
+        <p>If there are <span>two or more CSS rules</span> that point to the same element, 
+            the selector with the <span>highest specificity value will "win"</span>, and its style declaration will be applied to that HTML element.</p>
+
+    </section>
+
+    <section id="hierarchy_ls">
+        <h2>Specificity Hierarchy</h2>
+        <div>Every CSS selector has its place in the specificity hierarchy.</div>
+        <div>There are four categories which define the specificity level of a selector:</div>
+        <ol>
+            <li><strong>Inline styles</strong> - Example: &lt;h1 style="color: pink;"&gt;</h1></li>
+            <li><strong>IDs</strong> - Example: #navbar</li>
+            <li><strong>Classes, pseudo-classes, attribute selectors</strong> - Example: .test, :hover, [href]</li>
+            <li><strong>Elements and pseudo-elements</strong> - Example: h1, ::before</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>How to Calculate Specificity?</h2>
+        <div>Memorize how to calculate specificity!</div>
+        <div>Start at 0, add 100 for each ID value, add 10 for each class value (or pseudo-class or attribute&nbsp;selector), add 1 for each element selector or pseudo-element.</div>
+        <article id="note">
+            <div><strong>Note:</strong> Inline style gets a specificity value of 1000, and is always given the highest priority!</div>
+            <div><strong>Note 2:</strong> There is one exception to this rule: if you use the <span style="color: red;text-decoration-line: underline;">!important</span> rule, it will even override inline styles!</div>
+        </article>
+    </section>
+    <p>The table below shows some examples on how to calculate specificity values:</p>
+    <table class="ws-table-all">
+        <tr>
+          <th>Selector</th>
+          <th>Specificity Value</th>
+          <th>Calculation</th>
+        </tr>
+        <tr>
+          <td>p</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>p.test</td>
+          <td>11</td>
+          <td>1 + 10</td>
+        </tr>
+        <tr>
+          <td>p#demo</td>
+          <td>101</td>
+          <td>1 + 100</td>
+        </tr>
+        <tr>
+          <td>&lt;p style=&quot;color: pink;&quot;&gt;</td>
+          <td>1000</td>
+          <td>1000</td>
+        </tr>
+        <tr>
+          <td>#demo</td>
+          <td>100</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>.test</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>p.test1.test2</td>
+          <td>21</td>
+          <td>1 + 10 + 10</td>
+        </tr>
+        <tr>
+          <td>#navbar p#demo</td>
+          <td>201</td>
+          <td>100 + 1 + 100</td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <td>0</td>
+          <td>0 (the universal selector is ignored)</td>
+        </tr>
+        </table>
+
+</body>
+</html>

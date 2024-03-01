@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning Elements by Floating</title>
+    <style>
+        div{
+            background-color: #00ffff;
+        }
+        .test1{
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+        }
+
+        #p1{
+            background-color: blue;
+            float: right; /*使用float時margin永遠不會collapse 所以p1的 top margin會出現*/
+        }
+        #p2{
+            background-color: yellow;
+            /*正常情況下 上下的margin在碰到時會造成margin collapse*/
+        }
+        #p3{
+            background-color: purple;
+        }
+        #p4{
+            background-color: green;
+        }
+
+        .box1{
+            background-color: red;
+        }
+        .box1 p{
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            float: left;
+            margin: 5px;
+        }
+        #p5{
+            background-color: blue;
+            height: 200px;
+        }
+        #p6{
+            background-color: yellow;
+            float: right;
+            height: 300px;
+        }
+        #p7{
+            background-color: purple;
+            clear:  both; /*聲明不該有任何element float到他的2邊*/
+        }
+        #p8{
+            background-color: green;
+        }
+        .box1 section{
+            clear: left;/*聲明不該有任何element float到他的左邊*/
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Positioning Elements by Floating</h1>
+    
+    <div>
+        <p class="test1" id="p1"></p>
+        <p class="test1" id="p2"></p>
+        <p class="test1" id="p3"></p>
+        <p class="test1" id="p4"></p>
+        <section>aaaaaaaaaaaaaaaaaaaaaaaaa</section>
+    </div>
+
+    <div class="box1">
+        <p class="test2" id="p5"></p>
+        <p class="test2" id="p6"></p>
+        <p class="test2" id="p7"></p>
+        <p class="test2" id="p8"></p>
+        <section>aaaaaaaaaa
+            aaaaaaaabbbbbbbbbbbbbbbbbbbbb
+            bbbbbbbbbbbbbbbbb</section>
+    </div>
+
+
+</body>
+</html>

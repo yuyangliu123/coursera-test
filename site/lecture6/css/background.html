@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background property</title>
+    <style>
+        #bg{
+            width: 500px;
+            height: 500px;
+            background-color: blue; /*設定背景顏色*/
+            background-image: url("https://www.youtube.com/s/desktop/0fccf9b4/img/favicon_144x144.png"); /*設定背景圖片*/
+            background-repeat: no-repeat; /*設定圖片是否需要重複 若圖片比大小比background還大則會顯示重複*/
+            background-position: bottom; /*設定背景位置*/
+        }
+        #bg1{
+            width: 500px;
+            height: 500px;
+            background-color: red; /*設定背景顏色 但在background 所以會被下面取代*/
+            background: url("https://pbs.twimg.com/media/F12BhZ7aEAIc1bQ.png") no-repeat top left green; /*設定背景圖片 是否重複 位置 顏色*/ 
+            background-size: 200px; /*設定背景大小*/
+        }
+    </style>
+</head>
+<body>
+    <h1>The Background Property</h1>
+    
+    
+    <div id="bg">Background properties are fun</div>
+    <div id="bg1">Background properties are fun</div>
+</body>
+</html>
